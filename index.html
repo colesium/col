@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 <body>
+    <h1>Hola :3</h1>
+    <audio id="audio" src="audio.wav"></audio>
+    <button onclick="document.getElementById('audio').play()">Play</button>
+    <button onclick="downloadAudio()">Download</button>
 
-<h2>Made it this far? We're only starting ;D</h2>
-<p>anyways... can you find where this is hosted? (hint:somewhere on earth!)</p>
-  <p>this is where the first part stops... the introduction!</p>
-<!-- i hope you didnt cheat and came directly to my github! or came accross it by accident?!
-  sorry my puzzle is ass, but oh well... working on completing it soon-->
-
+    <script>
+        function downloadAudio() {
+            const link = document.createElement('a');
+            link.href = 'audio.wav';
+            link.download = 'audio.wav';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
